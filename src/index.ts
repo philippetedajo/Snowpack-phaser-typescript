@@ -1,11 +1,17 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+import Phaser from 'phaser';
 
-import confetti from 'canvas-confetti';
+export default class Demo extends Phaser.Scene {
+  constructor() {
+    super('demo');
+  }
+}
 
-confetti.create(document.getElementById('canvas') as HTMLCanvasElement, {
-  resize: true,
-  useWorker: true,
-})({ particleCount: 200, spread: 200 });
+const config = {
+  type: Phaser.AUTO,
+  backgroundColor: '#125555',
+  width: 800,
+  height: 400,
+  scene: Demo,
+};
+
+const game = new Phaser.Game(config);
